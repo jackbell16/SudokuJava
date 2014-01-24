@@ -1,0 +1,11 @@
+package tests;
+
+import utils.CaricamentoFile;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNameFile("sudoku.txt");
+	}
+
+}

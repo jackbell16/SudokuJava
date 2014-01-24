@@ -1,0 +1,32 @@
+package utils;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+public class CaricamentoFile {
+	private ArrayList<String> list = new ArrayList<>();
+	private BufferedReader bufferedReader;
+	public void setNameFile(String string){
+		list.clear();
+		try {
+			bufferedReader = new BufferedReader(new FileReader(string));
+			String line = bufferedReader.readLine();
+			while(line!=null){
+				list.add(line);
+				line = bufferedReader.readLine();
+				System.out.println(line);
+			}
+			bufferedReader.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public ArrayList<String> getList() {
+		return list;
+	}
+	public void setList(ArrayList<String> list) {
+		this.list = list;
+	}
+	
+}

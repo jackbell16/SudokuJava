@@ -1,0 +1,30 @@
+package tests;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+import utils.CaricamentoFile;
+import utils.RigaSudoku;
+import utils.Sudoku;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNameFile("sudoku.txt");
+		ArrayList<RigaSudoku> righeSudoku = new ArrayList<>();
+		for (int i = 0; i < caricamentoFile.getList().size(); i++) {
+			String string = caricamentoFile.getList().get(i);
+			StringTokenizer tokenizer = new StringTokenizer(string);
+			int indiceRiga = Integer.valueOf(tokenizer.nextToken());
+			int indiceColonna = Integer.valueOf(tokenizer.nextToken());
+			String valore = tokenizer.nextToken();
+			RigaSudoku rigaSudoku = new RigaSudoku(indiceRiga, indiceColonna, valore);
+			righeSudoku.add(rigaSudoku);
+		}
+		Sudoku sudoku = new Sudoku(righeSudoku);
+		for (int i = 0; i < sudoku.getRigheSudoku().size(); i++) {
+			System.out.println(sudoku.getRigheSudoku().get(i));
+		}
+	}
+
+}

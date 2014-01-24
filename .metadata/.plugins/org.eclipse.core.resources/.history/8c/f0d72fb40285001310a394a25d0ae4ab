@@ -1,0 +1,9 @@
+package utils;
+
+import java.util.ArrayList;
+
+public interface InterpreteSudoku {
+
+	public abstract void impostaSoduku(ArrayList<String> list);
+
+}

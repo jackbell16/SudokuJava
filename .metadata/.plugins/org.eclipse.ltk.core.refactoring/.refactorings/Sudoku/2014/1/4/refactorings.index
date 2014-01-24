@@ -1,0 +1,20 @@
+1390561503992	Rename resource 'sudoku.txt.rtf'
+1390562123506	Move file
+1390564311653	Move field
+1390564543994	Rename type 'RigheSudoku'
+1390569954473	Extract method 'stampaSudokuErr'
+1390571787060	Extract method 'calcolaSommaN'
+1390572636851	Delete element
+1390572640688	Delete element
+1390572787772	Delete element
+1390573211465	Extract interface 'InterpreteSudoku'
+1390573220355	Delete element
+1390573241119	Rename type 'InterpreteSudoku'
+1390573262197	Rename type 'InterpreteFileSudoku'
+1390573277451	Rename type 'InterpreteFile'
+1390573618923	Delete element
+1390573622607	Delete element
+1390573631152	Rename type 'Tests05'
+1390593213743	Move compilation unit
+1390593758938	Rename method 'risolviCarattare'
+1390593785504	Extract interface 'Risolutore'

@@ -1,0 +1,36 @@
+package utils;
+
+public class Sudoku {
+	private int indiceRiga;
+	private int indiceColonna;
+	private int valore;
+	
+	public Sudoku(int indiceRiga, int indiceColonna, int valore) {
+		super();
+		this.indiceRiga = indiceRiga;
+		this.indiceColonna = indiceColonna;
+		this.valore = valore;
+	}
+	public Sudoku1(int indiceRiga2, int indiceColonna2, int valore2) {
+		// TODO Auto-generated constructor stub
+	}
+	public int getIndiceRiga() {
+		return indiceRiga;
+	}
+	public void setIndiceRiga(int indiceRiga) {
+		this.indiceRiga = indiceRiga;
+	}
+	public int getIndiceColonna() {
+		return indiceColonna;
+	}
+	public void setIndiceColonna(int indiceColonna) {
+		this.indiceColonna = indiceColonna;
+	}
+	public int getValore() {
+		return valore;
+	}
+	public void setValore(int valore) {
+		this.valore = valore;
+	}
+	
+}

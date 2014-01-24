@@ -1,0 +1,26 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class RisolutoreCarattare {
+	
+	private static void calcolaSommaN(String[][] valori, int[] sommaValori) {
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9 ; j++) {
+				if(!valori[i][j].equalsIgnoreCase(".")){
+				sommaValori[i] += Integer.valueOf(valori[i][j]); 
+				}
+			}
+		}
+	}
+	
+	public void risolviCarattare(String[][] valori){
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if(valori[i][j].equalsIgnoreCase(".")){
+					valori[i][j] = String.valueOf(45-sommaValori[i]);
+				}
+			}
+		}
+	}
+}

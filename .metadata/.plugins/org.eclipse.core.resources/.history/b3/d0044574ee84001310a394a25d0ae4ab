@@ -1,0 +1,24 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class Sudoku {
+	
+	private ArrayList<RigheSudoku> righeSudoku = new ArrayList<>();
+
+	public Sudoku(ArrayList<RigheSudoku> righeSudoku) {
+		super();
+		this.righeSudoku = righeSudoku;
+	}
+
+	public ArrayList<RigheSudoku> getRigheSudoku() {
+		return righeSudoku;
+	}
+
+	public void setRigheSudoku(ArrayList<RigheSudoku> righeSudoku) {
+		this.righeSudoku = righeSudoku;
+	}
+	
+	
+	
+}

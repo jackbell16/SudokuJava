@@ -1,0 +1,7 @@
+package utils;
+
+public interface Risolutore {
+
+	public abstract void risolvi(String[][] valori);
+
+}

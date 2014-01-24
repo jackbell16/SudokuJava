@@ -1,0 +1,96 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
+
+import utils.CaricamentoFile;
+import utils.InterpreteSudokuTest;
+import utils.RisolutoreCarattare;
+import utils.Sudoku;
+
+
+public class UserPanel {
+	private static void mostraSudoku(String[][] valori, JTextArea area){
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				area.append(valori[i][j]+" ");
+				if(j==2 || j==5){
+					area.append("| ");
+				}
+				
+			}
+			area.append("\n");
+			if(i==2 || i==5){
+				for (int h = 0; h < 22; h++) {
+					area.append("-");
+				}
+				area.append("\n");
+			}	
+		}
+	}
+	private static String indirizzoFile = null;
+	public static void main(String[] args) {
+		final CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNameFile("sudoku.txt");
+		InterpreteSudokuTest interpreteFileSudoku = new InterpreteSudokuTest();
+		interpreteFileSudoku.impostaSoduku(caricamentoFile.getList());
+		final String [][] valori = interpreteFileSudoku.getValori();
+		final Sudoku sudoku = new Sudoku(interpreteFileSudoku);
+		sudoku.stampaSudoku();
+		RisolutoreCarattare risolutoreCarattare = new RisolutoreCarattare();
+		risolutoreCarattare.risolviCarattare(valori);
+		sudoku.setValori(valori);
+		sudoku.stampaSudoku();
+		final JFileChooser fileChooser = new JFileChooser(".");
+		JMenuBar menuBar = new JMenuBar();
+		JMenu menu = new JMenu("File");
+		JMenuItem item = new JMenuItem("Carica file");
+		menu.add(item);
+		JMenu menu2 = new JMenu("Sudoku");
+		JMenuItem item2 = new JMenuItem("Mostra Sudoku");
+		JMenuItem item3 = new JMenuItem("Risolvi");
+		menu2.add(item2);
+		menu2.add(item3);
+		menuBar.add(menu);
+		menuBar.add(menu2);
+		final JTextArea area = new JTextArea();
+		
+		item.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fileChooser.setVisible(true);
+				int status = fileChooser.showOpenDialog(null);
+				if (status == JFileChooser.APPROVE_OPTION) {
+			      File selectedFile = fileChooser.getSelectedFile();
+			      System.out.println(selectedFile.getParent());
+			      System.out.println(selectedFile.getPath());
+			      indirizzoFile = selectedFile.getPath();
+			      caricamentoFile.setNameFile(indirizzoFile);
+			     } else if (status == JFileChooser.CANCEL_OPTION) {
+			      System.out.println("canceled");
+			    }
+			}
+		});
+		item2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mostraSudoku(valori, area);
+				
+			}
+		});
+		JFrame frame = new JFrame("Sudoku");
+		frame.setSize(500, 500);
+		frame.setJMenuBar(menuBar);
+		frame.add(area);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+
+}

@@ -1,0 +1,15 @@
+/**
+ * Questo test ha lo scopo di verificare il corretto funzionamento del caricamento
+ * del file, contenente le coordinate dei valori
+ */
+package tests;
+
+import utils.CaricamentoFile;
+
+public class Tests01 {
+
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNameFile("sudoku.txt");
+	}
+}

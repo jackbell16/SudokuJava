@@ -1,0 +1,57 @@
+package utils;
+
+public class RigheSudoku {
+
+	private int indiceRiga;
+	private int indiceColonna;
+	private String valore;
+	
+	public RigheSudoku(int indiceRiga, int indiceColonna, String valore) {
+		super();
+		this.indiceRiga = indiceRiga;
+		this.indiceColonna = indiceColonna;
+		this.valore = valore;
+	}
+
+	public int getIndiceRiga() {
+		return indiceRiga;
+	}
+
+
+
+	public void setIndiceRiga(int indiceRiga) {
+		this.indiceRiga = indiceRiga;
+	}
+
+
+
+	public int getIndiceColonna() {
+		return indiceColonna;
+	}
+
+
+
+	public void setIndiceColonna(int indiceColonna) {
+		this.indiceColonna = indiceColonna;
+	}
+
+
+
+	public String getValore() {
+		return valore;
+	}
+
+
+
+	public void setValore(String valore) {
+		this.valore = valore;
+	}
+
+
+
+	@Override
+	public String toString(){
+		return getIndiceRiga()+" "+getIndiceColonna()+" "+getValore(); 
+	}
+	
+}

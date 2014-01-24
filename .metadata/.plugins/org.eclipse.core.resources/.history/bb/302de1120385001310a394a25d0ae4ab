@@ -1,0 +1,45 @@
+package utils;
+
+
+public class Sudoku {
+	
+	private String[][] valori = new String[9][9];
+	
+	public Sudoku(String[][] valori) {
+		super();
+		this.valori = valori;
+	}
+	
+	
+	
+	public String[][] getValori() {
+		return valori;
+	}
+
+
+
+	public void setValori(String[][] valori) {
+		this.valori = valori;
+	}
+
+
+
+	public void stampaSudoku() {
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				System.out.print(valori[i][j]+" ");
+				if(j==2 || j==5){
+					System.out.print("| ");
+				}
+				
+			}
+			System.out.println(" ");
+			if(i==2 || i==5){
+				for (int h = 0; h < 22; h++) {
+					System.out.print("-");
+				}
+				System.out.println(" ");
+			}	
+		}
+	}
+}

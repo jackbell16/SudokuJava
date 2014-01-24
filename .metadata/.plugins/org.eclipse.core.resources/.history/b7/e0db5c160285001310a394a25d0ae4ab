@@ -1,0 +1,22 @@
+package tests;
+
+import utils.CaricamentoFile;
+import utils.InterpreteFileSudoku;
+import utils.RisolutoreCarattare;
+import utils.Sudoku;
+
+public class Tests05 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNameFile("sudoku.txt");
+		String [][] valori = new String[9][9];
+		InterpreteFileSudoku interpreteFileSudoku = new InterpreteFileSudoku();
+		interpreteFileSudoku.impostaSoduku(caricamentoFile.getList());
+		Sudoku sudoku = new Sudoku(valori);
+		sudoku.stampaSudoku();
+		RisolutoreCarattare risolutoreCarattare = new RisolutoreCarattare();
+		risolutoreCarattare.risolviCarattare(valori);
+		sudoku.setValori(valori);
+		sudoku.stampaSudoku();
+	}
+}
